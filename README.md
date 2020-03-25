@@ -4,10 +4,10 @@ Learning outcomes highlights:
 - How to use the stack via an interesting application
 - Designing an exception class in C++
 
-#### Reverse Polish Calculator with a Stack
+### Reverse Polish Calculator
 Reverse Polish Notation (RPN) or postfix notation is a format to specify mathematical expressions.  In RPN the operator comes after the operands instead of the more common format in which the operator is between the operands (this is called infix notation). For example, PRN of ((10 – (2+3))*2)/5 is 10 2 3 + - 2 * 5.
 
-**Problem** The goal is to use the stack template class to implement a RPN calculator. The program reads the input which is the PRN like 10 2 3 + - 2 * 5 / q (q shows the end of input) and calculates the expression. In our example, the output is:
+**Problem:** The goal is to use the stack template class to implement a RPN calculator. The program reads the input which is the PRN like 10 2 3 + - 2 * 5 / q (q shows the end of input) and calculates the expression. In our example, the output is:
 > Answer = 1 
 
 The algorithmm that you need to implement is as follows:
