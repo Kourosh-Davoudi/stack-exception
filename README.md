@@ -80,8 +80,7 @@ int main()
     }
 ```
 ## Task2: Implement exception mechanism
-In the previous task, we assume that user input is always correct. Rewrite the program and implement exception mechanisms that can handle different errors in input. The program should <code>throw</code> different exceptions (could be an object or just an integer), and have an appropriate catch statement to handle these cases. 
-The program should handle the following cases: 
+In the previous task, we assumed that the user input is always correct. Rewrite the program and implement exception mechanisms that can handle different errors in the input. The program should <code>throw</code> different exceptions (could be an object or just an integer), and have an appropriate catch statement to handle these cases: 
  - There are not at least two operands on the stack when given an operator.
  - There are unexpected input(s) which are not operator (+,-, *, / ) nor an integer.
  - There are more than one item on the stack when we want to print the result. 
