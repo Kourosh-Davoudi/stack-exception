@@ -4,7 +4,7 @@ Learning outcomes highlights:
 - How to use the stack via an interesting application
 - Designing an exception class in C++
 
-### Reverse Polish Calculator
+### Task1: Reverse Polish Calculator
 Reverse Polish Notation (RPN) or postfix notation is a format to specify mathematical expressions.  In RPN the operator comes after the operands instead of the more common format in which the operator is between the operands (this is called infix notation). For example, PRN of ((10 – (2+3))*2)/5 is 10 2 3 + - 2 * 5.
 
 **Problem:** The goal is to use the stack template class to implement a RPN calculator. The program reads the input which is the PRN like 10 2 3 + - 2 * 5 / q (q shows the end of input) and calculates the expression. In our example, the output is:
@@ -21,7 +21,7 @@ Starting with an empty stack, read the tokens (numbers and operators) in input o
  - If “q” is input them stop inputting values, print out the top of the stack, and exit the program
 Use the stack template class to implement a RPN calculator.  Output an appropriate error message if there are not two operands on the stack when given an operator.  Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
 
-Use the stack template class to implement a RPN calculator.  Throw an exception if there are not two operands on the stack when given an operator.  Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
+Use the stack template class to implement a RPN calculator. Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
 10 2 3 + - 2 * 5 / q
 
 The starter code is as follows (you need to add your code as indicted by comments):
@@ -79,4 +79,9 @@ int main()
         cin >> in;
     }
 ```
-
+## Task2: Implement exception mechanism
+In the previous task, we assume that user input is always correct. Rewrite a a program and implement exception mechanisms that can handle different errors. The program should the throws different exception (could be an object or just an integer), and appropriate catch statements to handle these mistakes. 
+The program should handle the following cases: 
+ - There are not at least two operands on the stack when given an operator.
+ - There are unexpected input(s) which are not operator (+,-, *, / ) nor an integer.
+ - There are more than one item on the stack when we want to print the result. 
