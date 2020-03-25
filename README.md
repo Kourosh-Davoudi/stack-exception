@@ -6,7 +6,7 @@ Learning outcomes highlights:
 
 ### Task1: Reverse Polish Calculator
 Reverse Polish Notation (RPN) or postfix notation is a format to specify mathematical expressions.  In RPN the operator comes after the operands instead of the more common format in which the operator is between the operands (this is called infix notation). For example, PRN of ((10 – (2+3))*2)/5 is
-> 10 2 3 + - 2 * 5.
+> 10 2 3 + - 2 * 5 /
 
 **Problem:** The goal is to use the stack template class to implement a RPN calculator. The program reads the input which is the PRN like 10 2 3 + - 2 * 5 / q (q shows the end of input) and calculates the expression. In our example, the output is:
 > The answer is : 2
