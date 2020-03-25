@@ -1,112 +1,82 @@
-## Class Review 1
+## Stack and Exception
 
 Learning outcomes highlights: 
-- implementing member functions
-- implementing friend functions
-- overloading operators
+- How to use the stack via an interesting application
+- Designing an exception class in C++
 
-**Problem:** The Circle class is implemented to hold a circle information. The constructor job is to initialize the objects of the class. Read the program carefully and write appropriate statements as described by comments.
+# Task1: Reverse Polish Calculator with a Stack
+Reverse Polish Notation (RPN) or postfix notation is a format to specify mathematical expressions.  In RPN the operator comes after the operands instead of the more common format in which the operator is between the operands (this is called infix notation). For example, PRN of ((10 – (2+3))*2)/5 is 10 2 3 + - 2 * 5.
 
+**Problem** The goal is to use the stack template class to implement a RPN calculator. The program reads the input which is the PRN like 10 2 3 + - 2 * 5 / q (q shows the end of input) and calculates the expression. In our example, the output is:
+> Answer = 1 
+
+The algorithmm that you need to implement is as follows:
+
+Starting with an empty stack, read the tokens (numbers and operators) in input one by one:
+ - If a number is input, push it on the stack
+ - If “+” is input then pop the last two operands off the stack, add them, and push the result on the stack
+ - If “-“ is input then pop value1, pop value2, then push value2 - value1 on the stack
+ - If “*” is input then pop the last two operands off the stack, multiply them, and push the result on the stack
+ - If “/” is input them pop value1, pop value2, then push value2 / value1 on the stack
+ - If “q” is input them stop inputting values, print out the top of the stack, and exit the program
+Use the stack template class to implement a RPN calculator.  Output an appropriate error message if there are not two operands on the stack when given an operator.  Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
+
+Use the stack template class to implement a RPN calculator.  Throw an exception if there are not two operands on the stack when given an operator.  Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
+10 2 3 + - 2 * 5 / q
+
+The starter code is as follows (you need to add your code as indicted by comments):
 ```C++
-#include <iostream>
+// RPN calculator
+
+#include <iostream> 
+#include <string>
+#include <stack> 
+
 using namespace std;
+bool is_str_digit(string);  // returns true if input parameter string is and integer (e.g., "127343")
+bool is_str_operator(string); // returns true if the input parameter is an operator character (e.g., "+", "*")
 
-class Circle {
-  private:  
-    int x,y;      // center of circle
-    double r;    // radius of circle
 
-  public:
-   
-    Circle(int =0,int=0, double =1.0);
-    void print() const;
-    double area() const;
-
-    double operator+(const Circle &) const;
-
-    Circle & operator++();
-    Circle operator++(int);
-
-  friend ostream & operator<<(ostream &out, const Circle &);
-  friend istream & operator>>(istream &in, Circle &);
-};
-
-Circle::Circle(int x,int y, double r)
+int main() 
 {
-  // Initialize the object here
-}
+    string in;
+    stack<string> st;   // stack definition
 
-double Circle::area() const {
-  // Return the area of a circle  
-}
+    cin >> in;
 
-double Circle::operator+(const Circle & c) const
-{
-   // + Return the area of two circles  
+    while(in != "q")
+    {
+        if(is_str_digit(in)){
+            // add your code here
+        }
+        else if(is_str_operator(in))
+        {
+            // add your code here 
 
-}
+            switch(in[0])
+            {
+                case '+':
+                    value3 = value2 + value1;
+                    break;
 
-Circle & Circle::operator++()
-{
-  // Increment the radius by 1
+                case '-':
+                    value3 = value2 - value1;
+                    break;
 
-  return *this;
-}
+                case '*':
+                    value3 = value2 * value1;
+                    break;
 
-Circle Circle::operator++(int)
-{
-  Circle temp = *this;
-  
-  //increment the radius by 1
+                case '/':
+                    value3 = value2 / value1;
+                    break;
 
-  return temp;
-}
+            }
 
-ostream & operator<<(ostream &out, const Circle &c)
-{
+            // add your code here
 
-  // print a circle in the out stream (the format is the same as print())
-  return out;
-}
-
-istream & operator>>(istream &in, Circle &c)
-{
- 
- // Read a circle information form the in stream
-
-  return in;
-}
-
-
-void Circle::print() const
-{
-  cout << "Circle =(" << x << "," << y << "," << r << ")" << endl;
-}
-
-
-
-int main()
-{
-  // Circle a;
-  // Circle b(2,3,3.0);
-
-  // a.print();
-  // b.print();
-  
-  // cout << "The area a + b is: " << a+b << endl;
-  // ++a;
-  // a.print();
-
-  // a++;
-  // a.print();
-
-  // cout << a;
-
-  // cin >> a;
-  // cout <<a;
-
-  return 0;
-
-}
-
+        }
+        cin >> in;
+    }
 ```
+
