@@ -25,7 +25,7 @@ Use the stack template class to implement a RPN calculator.  Output an appropria
 Use the stack template class to implement a RPN calculator. Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
 10 2 3 + - 2 * 5 / q
 
-Hint: see <code>stoi</code> and <code>to_string</code> for the conversion betwwen <code>string</code> and <code>int<></code>.
+Hint: see <code>stoi</code> and <code>to_string</code> for the conversion betwwen <code>string</code> and <code>int</code>.
 
 
 The starter code is as follows (you need to add your code as indicted by comments):
