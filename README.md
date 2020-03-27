@@ -22,8 +22,7 @@ Starting with an empty stack, read the tokens (numbers and operators) in input o
  - If “q” is input them stop inputting values, print out the top of the stack, and exit the program
 Use the stack template class to implement a RPN calculator.  Output an appropriate error message if there are not two operands on the stack when given an operator.  Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
 
-Use the stack template class to implement a RPN calculator. Here is sample input and output that is equivalent to ((10 – (2+3))*2)/5:
-10 2 3 + - 2 * 5 / q
+Use the stack template class to implement a RPN calculator.
 
 Hint: see <code>stoi</code> and <code>to_string</code> for the conversion betwwen <code>string</code> and <code>int</code>.
 
