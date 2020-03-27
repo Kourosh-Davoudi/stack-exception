@@ -82,6 +82,24 @@ int main()
         }
         cin >> in;
     }
+    cout << "The answer is : " << st.top() << endl;
+
+    return 0; 
+}
+
+bool is_str_digit(string s)
+{
+    for (int i = 0; i < s.length(); ++i)
+    {
+            if(!isdigit(s[i]))
+                return false;
+    }
+    return true;
+}
+bool is_str_operator(string s)
+{
+    return (s.length()==1 && (s[0] == '+' || s[0] == '-' || s[0] == '*' || s[0]== '/'));
+}
 ```
 ## Task2: Implement exception mechanism
 In the previous task, we assumed that the user input is always correct. Rewrite the program and implement exception mechanisms that can handle different errors in the input. The program should <code>throw</code> different exceptions (could be an object or just an integer), and have an appropriate catch statement to handle these cases: 
